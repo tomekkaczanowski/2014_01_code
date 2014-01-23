@@ -163,35 +163,35 @@
             <!--<groupId>commons-dbutils</groupId>-->
             <!--<artifactId>commons-dbutils</artifactId>-->
         <!--</dependency>-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-webmvc</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>javax.validation</groupId>-->
+            <!--<artifactId>validation-api</artifactId>-->
+        <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>org.hibernate</groupId>-->
             <!--<artifactId>hibernate-validator-annotation-processor</artifactId>-->
         <!--</dependency>-->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>2.33.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.seleniumhq.selenium</groupId>-->
+            <!--<artifactId>selenium-java</artifactId>-->
+            <!--<version>2.33.0</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-test</artifactId>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
         <!-- Those dependencies are required to run spring config test -->
-        <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.servlet</artifactId>
-            <scope>provided</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.glassfish</groupId>-->
+            <!--<artifactId>javax.servlet</artifactId>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -266,55 +266,55 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-                <version>1.4.0</version>
-                <configuration>
-                    <container>
-                        <containerId>tomcat7x</containerId>
-                        <zipUrlInstaller>
-                            <!--
-                                                  <url>file:/resources/${tomcat.zip.file}</url>
-                                                  -->
-                            <url>http://ftp.ps.pl/pub/apache/tomcat/tomcat-7/v${tomcat.version}/bin/apache-tomcat-${tomcat.version}.zip</url>
-                            <downloadDir>${project.basedir}/resources</downloadDir>
-                            <extractDir>${project.build.directory}/extracts</extractDir>
-                        </zipUrlInstaller>
-                    <!--    <log>${project.build.directory}/web.log</log>-->
-                    </container>
-                    <configuration>
-                        <properties>
-                            <cargo.servlet.uriencoding>UTF-8</cargo.servlet.uriencoding>
-                            <!--<cargo.servlet.port>${application.port}</cargo.servlet.port>-->
-                        </properties>
-                        <home>${project.build.directory}/tomcat7x/container</home>
-                    </configuration>
-                    <deployables>
-                        <deployable>
-                            <properties>
-                                <context>ROOT</context>
-                            </properties>
-                        </deployable>
-                    </deployables>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>start-web</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>stop-web</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.cargo</groupId>-->
+                <!--<artifactId>cargo-maven2-plugin</artifactId>-->
+                <!--<version>1.4.0</version>-->
+                <!--<configuration>-->
+                    <!--<container>-->
+                        <!--<containerId>tomcat7x</containerId>-->
+                        <!--<zipUrlInstaller>-->
+                            <!--&lt;!&ndash;-->
+                                                  <!--<url>file:/resources/${tomcat.zip.file}</url>-->
+                                                  <!--&ndash;&gt;-->
+                            <!--<url>http://ftp.ps.pl/pub/apache/tomcat/tomcat-7/v${tomcat.version}/bin/apache-tomcat-${tomcat.version}.zip</url>-->
+                            <!--<downloadDir>${project.basedir}/resources</downloadDir>-->
+                            <!--<extractDir>${project.build.directory}/extracts</extractDir>-->
+                        <!--</zipUrlInstaller>-->
+                    <!--&lt;!&ndash;    <log>${project.build.directory}/web.log</log>&ndash;&gt;-->
+                    <!--</container>-->
+                    <!--<configuration>-->
+                        <!--<properties>-->
+                            <!--<cargo.servlet.uriencoding>UTF-8</cargo.servlet.uriencoding>-->
+                            <!--&lt;!&ndash;<cargo.servlet.port>${application.port}</cargo.servlet.port>&ndash;&gt;-->
+                        <!--</properties>-->
+                        <!--<home>${project.build.directory}/tomcat7x/container</home>-->
+                    <!--</configuration>-->
+                    <!--<deployables>-->
+                        <!--<deployable>-->
+                            <!--<properties>-->
+                                <!--<context>ROOT</context>-->
+                            <!--</properties>-->
+                        <!--</deployable>-->
+                    <!--</deployables>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>start-web</id>-->
+                        <!--<phase>pre-integration-test</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>start</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>stop-web</id>-->
+                        <!--<phase>post-integration-test</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>stop</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
